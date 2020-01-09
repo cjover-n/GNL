@@ -6,18 +6,30 @@
 /*   By: cjover-n <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 04:12:37 by cjover-n          #+#    #+#             */
-/*   Updated: 2019/12/12 11:22:02 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/01/09 18:22:26 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		ft_strlen(char const *s)
+char	*ft_strnew(size_t size)
 {
-	int		i;
+	char	*str;
+
+	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
+		return (NULL);
+	str[size] = '\0';
+	while (size--)
+		str[size] = '\0';
+	return (str);
+}
+
+size_t		ft_strlen(const char *str)
+{
+	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] != '\0')
 		i++;
 	return (i);
 }

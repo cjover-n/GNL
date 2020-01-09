@@ -6,7 +6,7 @@
 /*   By: cjover-n <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 03:58:05 by cjover-n          #+#    #+#             */
-/*   Updated: 2019/12/19 19:57:48 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/01/09 17:01:20 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 # include <sys/uio.h>
 
 int		get_next_line(int fd, char **line);
+char	*ft_strnew(size_t size);
 
 #endif

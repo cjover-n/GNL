@@ -6,7 +6,7 @@
 /*   By: cjover-n <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 03:53:03 by cjover-n          #+#    #+#             */
-/*   Updated: 2019/12/19 19:55:48 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/01/09 19:14:17 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,23 @@ int		get_next_line(int fd, char **line)
 
 	if (!(heap = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))) || 
 			!line || !fd)
-		return (NULL);
+		return (-1);
 	bytes = read(fd, heap, BUFFER_SIZE);
-	while (*heap != 0)
+	while (bytes > 0)
 	{
+		heap[bytes] = '\0';
+		if (stat[fd] == NULL)
+			stat[fd] = ft_strnew(1);
 		
 	}
 }
+
+/*
+int		main(void)
+{
+	int fd;
+
+	fd = read("text.txt", O_RDONLY);
+	
+}
+*/
