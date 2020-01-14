@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjover-n <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/12 03:58:05 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/01/13 13:51:19 by cjover-n         ###   ########.fr       */
+/*   Created: 2020/01/14 13:15:53 by cjover-n          #+#    #+#             */
+/*   Updated: 2020/01/14 13:16:33 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
-int		get_next_line(int fd, char **line);
-char	*ft_strdup(const char *src);
-size_t	ft_strlen(const char *str);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strcdup(const char *s1, int c);
-char	*ft_strchr(const char *str, int c);
+int     get_next_line(int fd, char **line);
+char    *ft_strdup(const char *src);
+size_t  ft_strlen(const char *str);
+char    *ft_strjoin(char const *s1, char const *s2);
+char    *ft_strcdup(const char *s1, int c);
+char    *ft_strchr(const char *str, int c);
 
 #endif

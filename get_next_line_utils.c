@@ -6,25 +6,34 @@
 /*   By: cjover-n <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 04:12:37 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/01/09 18:22:26 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/01/13 14:03:16 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strdup(const char *src)
 {
-	char	*str;
+	char	*new;
+	int		i;
+	int		size;
 
-	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
+	size = 0;
+	while (src[size])
+		++size;
+	if (!(new = malloc(sizeof(char) * (size + 1))))
 		return (NULL);
-	str[size] = '\0';
-	while (size--)
-		str[size] = '\0';
-	return (str);
+	i = 0;
+	while (src[i])
+	{
+		new[i] = src[i];
+		i++;
+	}
+	new[i] = '\0';
+	return (new);
 }
 
-size_t		ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
@@ -53,19 +62,39 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (dest);
 }
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strcdup(const char *s1, int c)
 {
-	unsigned const char	*str1;
-	unsigned char		*str2;
-	size_t				i;
+	int		i;
+	char	*str;
+	char	car;
 
-	str1 = (unsigned const char *)src;
-	str2 = (unsigned char *)dst;
 	i = 0;
-	while (i < n && (str1 || str2))
+	car = (char)c;
+	while (s1[i] != car && s1[i] != '\0')
+		i++;
+	str = malloc(i + 1 * sizeof(char));
+	str[i] = '\0';
+	if (str == NULL)
 	{
-		str2[i] = str1[i];
+		return (NULL);
+	}
+	while (i-- > 0)
+		str[i] = s1[i];
+	return (str);
+}
+
+char	*ft_strchr(const char *str, int c)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == (char)c)
+			return ((char *)&str[i]);
 		i++;
 	}
-	return (dst);
+	if (str[i] == (char)c)
+		return ((char *)&str[i]);
+	return (NULL);
 }
